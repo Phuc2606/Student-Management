@@ -4,8 +4,8 @@ Dự án quản lý sinh viên sử dụng Java Spring Boot, thực hiện theo 
 
 ## 👥 Danh sách thành viên
 
-- **Nguyễn Minh Phúc** - MSSV: 23128 L02
-- **Đặng Đình Thiên Quân** - MSSV: 2312818 L01
+- **Nguyễn Minh Phúc** - MSSV: 2312701 L01
+- **Đặng Đình Thiên Quân** - MSSV: 2312818 L02
 
 ## 🌐 Public URL
 
