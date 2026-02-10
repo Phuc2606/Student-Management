@@ -23,4 +23,8 @@ public class StudentController {
     public Student getById(@PathVariable String id) {
         return service.getById(id);
     }
+    @GetMapping("/search")
+    public List<Student> searchByName(@RequestParam String name){
+        return service.searchByName(name);
+    }
 }

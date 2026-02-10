@@ -27,10 +27,29 @@
         th {
             background-color: #f2f2f2;
         }
+        .text-danger {
+            color: red;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        form input {
+            padding: 8px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        form button {
+            padding: 8px 16px;
+        }
     </style>
 </head>
 
 <body>
+    <form action="/students" method="GET">
+        <input type="text" name="keyword" placeholder="Nhap ten..." />
+        <button type="submit">Tim Kiem</button>
+    </form>
+
     <h1>Danh Sach Sinh Vien (SSR)</h1>
     <table>
         <thead>
@@ -44,12 +63,13 @@
         <tbody>
             <!-- Cu phap Thymeleaf: Duyet qua danh sach "dsSinhVien" -->
             <!-- th:each="bien_tam : ${key_trong_model}" -->
-            <tr th:each="student : ${dsSinhVien}">
-                <td th:text="${student.id}">ID Mau</td>
-                <td th:text="${student.name}">Ten Mau</td>
-                <td th:text="${student.email}">Email Mau</td>
-                <td th:text="${student.age}">0</td>
+            <tr th:each="student : ${dsSinhVien}" th:class="${student.age < 18} ? 'text-danger' : ''">
+                <td th:text="${student.id}">ID</td>
+                <td th:text="${student.name}">Tên</td>
+                <td th:text="${student.email}">Email</td>
+                <td th:text="${student.age}">Tuổi</td>
             </tr>
+
         </tbody>
     </table>
 </body>
