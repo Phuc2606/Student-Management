@@ -19,11 +19,6 @@ public class StudentController {
         return service.getAll();
     }
 
-    @GetMapping("/")
-    public String home() {
-        return "redirect:/students";
-    }
-
     @GetMapping("/{id}")
     public Student getById(@PathVariable String id) {
         return service.getById(id);

@@ -25,6 +25,7 @@ public class StudentWebController {
     public String getAllStudents(@RequestParam(required = false) String keyword, Model model) {
         List<Student> students;
         if (keyword != null && !keyword.isEmpty()) {
+            // Can viet them ham searchByName trong Service/Repository
             students = service.searchByName(keyword);
         } else {
             students = service.getAll();
@@ -79,6 +80,11 @@ public class StudentWebController {
     @PostMapping("/{id}/delete")
     public String deleteStudentConfirmed(@PathVariable String id) {
         service.delete(id);
+        return "redirect:/students";
+    }
+
+    @GetMapping("/")
+    public String index() {
         return "redirect:/students";
     }
 }

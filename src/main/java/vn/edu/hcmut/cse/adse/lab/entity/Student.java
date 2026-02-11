@@ -3,6 +3,8 @@ package vn.edu.hcmut.cse.adse.lab.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "students")
@@ -11,9 +13,19 @@ public class Student {
     private String id;
     private String name;
     private String email;
-    private int age;
+
+    @NotNull(message = "Tuổi không được để trống")
+    @Min(value = 1, message = "Tuổi phải lớn hơn 0")
+    private Integer age;
 
     public Student() {
+    }
+
+    public Student(String id, String name, String email, Integer age) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.age = age;
     }
 
     public String getId() {
@@ -40,18 +52,11 @@ public class Student {
         this.email = email;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Student(String id, String name, String email, int age) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
+    public void setAge(Integer age) {
         this.age = age;
     }
 }
