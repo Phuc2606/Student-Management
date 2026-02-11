@@ -34,13 +34,13 @@ Dự án quản lý sinh viên sử dụng Java Spring Boot, thực hiện theo 
 1. **Build Image:**
 
 ```bash
-   docker build -t student-management .
+   docker build -t docker-web-app:latest .
 ```
 
 2. **Run Container:**
 
 ```bash
-   docker run -p 8080:8080 student-management
+   docker run -p 8080:80 docker-web-app:latest
 ```
 
 ## 📖 Câu trả lời lý thuyết:
@@ -65,3 +65,19 @@ Mỗi lần tắt ứng dụng và chạy lại, dữ liệu cũ lại bị mấ
 spring.jpa.hibernate.ddl-auto=create. Giá trị create ra lệnh cho Hibernate xóa toàn bộ các bảng cũ và tạo lại bảng mới từ đầu mỗi khi ứng dụng khởi chạy.
 
 ## 📸 Screenshot các module:
+
+### Trang Danh sách
+
+![Trang Danh sách](Image/ListView.png)
+
+### Trang Chi tiết
+
+![Trang Chi tiết](Image/DetailView.png)
+
+### Chức năng Thêm mới
+
+![Chức năng Thêm mới](Image/AddView.png)
+
+### Chức năng Chỉnh sửa
+
+![Chức năng Chỉnh sửa](Image/EditView.png)
