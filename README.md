@@ -40,7 +40,7 @@ Dự án quản lý sinh viên sử dụng Java Spring Boot, thực hiện theo 
 2. **Run Container:**
 
 ```bash
-   docker run -p 8080:80 docker-web-app:latest
+   docker run -p 8080:8080 --env-file .env docker-web-app:latest
 ```
 
 ## 📖 Câu trả lời lý thuyết:
