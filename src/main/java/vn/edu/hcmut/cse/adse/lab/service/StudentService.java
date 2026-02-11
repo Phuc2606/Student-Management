@@ -14,7 +14,7 @@ public class StudentService {
     private StudentRepository repository;
 
     public List<Student> getAll() {
-        return repository.findAll();
+        return repository.findAllOrderByIdAsNumber();
     }
 
     public Student getById(String id) {
@@ -22,5 +22,14 @@ public class StudentService {
     }
     public List<Student> searchByName(String name) {
         return repository.findByNameContainingIgnoreCase(name);
+    }
+    public void saveStudent(Student student) {
+        repository.save(student);
+    }
+    public void delete(String id) {
+        repository.deleteById(id);
+    }
+    public boolean existsById(String id) {
+        return repository.existsById(id);
     }
 }
