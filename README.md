@@ -9,7 +9,7 @@ Dự án quản lý sinh viên sử dụng Java Spring Boot, thực hiện theo 
 
 ## 🌐 Public URL
 
-- **Ứng dụng (Render):**
+- **Ứng dụng (Render):** https://student-management-3v5j.onrender.com/
 - **Database:** PostgreSQL (Neon.tech)
 
 ## 🛠 Hướng dẫn chạy dự án
