@@ -82,9 +82,4 @@ public class StudentWebController {
         service.delete(id);
         return "redirect:/students";
     }
-
-    @GetMapping("/")
-    public String index() {
-        return "redirect:/students";
-    }
 }

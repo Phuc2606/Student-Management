@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Thêm thông tin sinh viên</title>
@@ -35,6 +36,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -101,39 +103,59 @@
             box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
         }
 
-        input:invalid:not(:placeholder-shown) {
-            border-color: #d32f2f;
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: none;
         }
 
         .submit-btn {
             background: #1976d2;
             color: white;
-            border: none;
-            padding: 14px;
-            font-size: 1.05rem;
-            font-weight: 500;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            margin-top: 12px;
         }
 
         .submit-btn:hover {
             background: #1565c0;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(25, 118, 210, 0.3);
+            box-shadow: 0 6px 16px rgba(25, 118, 210, 0.3);
         }
 
-        .submit-btn:active {
-            transform: translateY(0);
+        .back-btn {
+            background: #616161;
+            color: white;
+        }
+
+        .back-btn:hover {
+            background: #424242;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(97, 97, 97, 0.3);
         }
 
         @media (max-width: 500px) {
             .container {
                 margin: 0 12px;
             }
+
             .content {
                 padding: 24px 28px;
+            }
+
+            .actions {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -169,9 +191,13 @@
                     <input type="number" id="age" name="age" min="1" required placeholder="Nhập tuổi">
                 </div>
 
-                <button type="submit" class="submit-btn">Thêm Sinh Viên</button>
+                <div class="actions">
+                    <button type="submit" class="btn submit-btn">Thêm Sinh Viên</button>
+                    <a th:href="@{/students}" class="btn back-btn">Quay lại</a>
+                </div>
             </form>
         </div>
     </div>
 </body>
+
 </html>
